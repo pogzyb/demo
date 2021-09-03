@@ -1,0 +1,17 @@
+---
+version: '3.7'
+
+services:
+
+  search-api:
+    build:
+      context: search-service
+      dockerfile: Dockerfile
+    container_name: search-api
+    hostname: search-api
+    env_file:
+      - .env.local
+    ports:
+      - 8080:8080
+    volumes:
+      - ./search-service:/search-service
