@@ -1,7 +1,6 @@
 import os
 import logging
 from urllib.parse import urlencode
-# from functools import wraps
 from typing import Dict, Any, Union
 
 import requests
@@ -42,7 +41,6 @@ class GiantBombClient:
         return giantbomb_data
 
     def _get_url_string(self, term: str, offset: int = 0) -> str:
-        base_url = 'https://giantbomb.com/api/search?'
         query_params = {
             'api_key': self.key,
             'format': 'json',
@@ -51,7 +49,7 @@ class GiantBombClient:
             'limit': 100,
             'offset': offset,
             'field_list': 'aliases,name,platforms'}
-        return f'{base_url}{urlencode(query_params)}'
+        return f'{self.base_url}{urlencode(query_params)}'
 
     def _make_api_call(self, url: str) -> Union[Dict[str, Any], None]:
         try:
