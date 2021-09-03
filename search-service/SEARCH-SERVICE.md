@@ -1,6 +1,7 @@
 ### Search-Service
 
 This directory contains the search service application. 
+After starting the application, the API can be found at http://localhost:8080
 
 Relevant file and directory information:
 
