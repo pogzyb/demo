@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # `entrypoint.sh` will start the application.
 # If running in debug mode, the werkzeug development server is started via the flask cli.
